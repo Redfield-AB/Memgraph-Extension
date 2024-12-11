@@ -7,7 +7,7 @@ import org.neo4j.driver.Value;
 import org.neo4j.driver.types.TypeSystem;
 
 /**
- * @author Vyacheslav Soldatov <vyacheslav.soldatov@inbox.ru>
+ * @author Vyacheslav Soldatov
  *
  */
 public class Neo4jDataConverter {

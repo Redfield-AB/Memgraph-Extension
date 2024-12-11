@@ -7,7 +7,7 @@ import org.knime.core.node.ExecutionContext;
 import org.neo4j.driver.Driver;
 
 /**
- * @author Vyacheslav Soldatov <vyacheslav.soldatov@inbox.ru>
+ * @author Vyacheslav Soldatov
  *
  */
 public class ContextListeningDriver {

@@ -38,10 +38,10 @@ public class WriterFactory extends ConfigurableNodeFactory<WriterModel> {
         final PortsConfigurationBuilder builder = new PortsConfigurationBuilder();
 
         builder.addOptionalInputPortGroup("Input table", BufferedDataTable.TYPE);
-        builder.addFixedInputPortGroup("Neo4j input connection", ConnectorPortObject.TYPE);
+        builder.addFixedInputPortGroup("Memgraph input connection", ConnectorPortObject.TYPE);
 
-        builder.addFixedOutputPortGroup("Neo4j Output", BufferedDataTable.TYPE);
-        builder.addFixedOutputPortGroup("Neo4j output connection", ConnectorPortObject.TYPE);
+        builder.addFixedOutputPortGroup("Memgraph Output", BufferedDataTable.TYPE);
+        builder.addFixedOutputPortGroup("Memgraph output connection", ConnectorPortObject.TYPE);
         return Optional.of(builder);
     }
 

@@ -9,7 +9,7 @@ import org.knime.core.data.DataRow;
 import org.neo4j.driver.Record;
 
 /**
- * @author Vyacheslav Soldatov <vyacheslav.soldatov@inbox.ru>
+ * @author Vyacheslav Soldatov
  *
  */
 public class ScriptExecutionResult {

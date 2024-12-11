@@ -14,7 +14,7 @@ import org.knime.core.node.context.NodeCreationConfiguration;
 import se.redfield.knime.neo4j.connector.ConnectorPortObject;
 
 /**
- * @author Vyacheslav Soldatov <vyacheslav.soldatov@inbox.ru>
+ * @author redfield.ai
  *
  */
 public class ReaderFactory extends ConfigurableNodeFactory<ReaderModel> {

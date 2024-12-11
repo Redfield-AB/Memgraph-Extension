@@ -13,7 +13,7 @@ import jakarta.json.stream.JsonGenerator;
 import se.redfield.knime.neo4j.db.Neo4jDataConverter;
 
 /**
- * @author Vyacheslav Soldatov <vyacheslav.soldatov@inbox.ru>
+ * @author Vyacheslav Soldatov
  *
  */
 public class JsonBuilder {

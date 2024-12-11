@@ -22,7 +22,7 @@ import org.neo4j.driver.types.Point;
 import org.neo4j.driver.types.Relationship;
 
 /**
- * @author Vyacheslav Soldatov <vyacheslav.soldatov@inbox.ru>
+ * @author Vyacheslav Soldatov
  *
  */
 public interface ConvertedValueConsumer {

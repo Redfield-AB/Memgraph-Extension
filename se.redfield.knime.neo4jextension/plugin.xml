@@ -4,17 +4,17 @@
    <extension
          point="org.knime.workbench.repository.nodes">
       <node
-            category-path="/community/neo4j"
+            category-path="/community/Redfield Memgraph Nodes"
             deprecated="false"
             factory-class="se.redfield.knime.neo4j.reader.ReaderFactory">
       </node>
       <node
-            category-path="/community/neo4j"
+            category-path="/community/Redfield Memgraph Nodes"
             deprecated="false"
             factory-class="se.redfield.knime.neo4j.connector.ConnectorFactory">
       </node>
       <node
-            category-path="/community/neo4j"
+            category-path="/community/Redfield Memgraph Nodes"
             deprecated="false"
             factory-class="se.redfield.knime.neo4j.writer.WriterFactory">
       </node>
@@ -23,9 +23,9 @@
          point="org.knime.workbench.repository.categories">
       <category
             icon="icons/redfield_logo.png"
-            level-id="neo4j"
+            level-id="Redfield Memgraph Nodes"
             locked="true"
-            name="Neo4j"
+            name="Redfield Memgraph Nodes"
             path="/community">
       </category>
    </extension>

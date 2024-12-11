@@ -21,8 +21,7 @@ import org.knime.core.node.port.PortType;
 import se.redfield.knime.neo4j.db.Neo4jSupport;
 
 /**
- * @author Vyacheslav Soldatov <vyacheslav.soldatov@inbox.ru>
- *
+ * @author redfield.ai
  */
 public class ConnectorModel extends NodeModel {
     private ConnectorConfig config;

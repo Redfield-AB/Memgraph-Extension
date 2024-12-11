@@ -22,12 +22,12 @@ import java.net.URISyntaxException;
 import java.text.NumberFormat;
 
 /**
- * @author Vyacheslav Soldatov <vyacheslav.soldatov@inbox.ru>
+ * @author Vyacheslav
  *
  */
 public class ConnectorDialog extends NodeDialogPane {
 
-    public static final String DEFAULT_DATABASE_NAME = "neo4j";
+    public static final String DEFAULT_DATABASE_NAME = "memgraph";
 
     //connection
     private final JTextField url = new JTextField();
@@ -39,7 +39,7 @@ public class ConnectorDialog extends NodeDialogPane {
     private String customDBNameBuffer = DEFAULT_DATABASE_NAME;
 
     private final SettingsModelAuthentication authSettings = new SettingsModelAuthentication(
-            "neo4jAuth", AuthenticationType.USER_PWD, "neo4j", null, null);
+            "neo4jAuth", AuthenticationType.USER_PWD, "memgraph", null, null);
     DialogComponentAuthentication authComp = new DialogComponentAuthentication(
             authSettings, "Authentication",
             AuthenticationType.NONE,
@@ -76,7 +76,7 @@ public class ConnectorDialog extends NodeDialogPane {
                 BorderFactory.createEtchedBorder(), "Connection"));
         p.add(north, BorderLayout.NORTH);
 
-        addLabeledComponent(north, "Neo4j URL", url, 0);
+        addLabeledComponent(north, "Memgraph URL", url, 0);
         addLabeledComponent(north, "Max connection pool size:", maxConnectionPoolSize, 1);
 
         // Set database name

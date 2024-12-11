@@ -11,7 +11,7 @@ import java.net.URISyntaxException;
 import java.util.Objects;
 
 /**
- * @author Vyacheslav Soldatov <vyacheslav.soldatov@inbox.ru>
+ * @author redfield.ai
  *
  */
 public class ConnectorConfig implements Cloneable {
@@ -24,7 +24,7 @@ public class ConnectorConfig implements Cloneable {
     public ConnectorConfig() {
         super();
         maxConnectionPoolSize = Math.max(Runtime.getRuntime().availableProcessors(), 1);
-        database = "neo4j";
+        database = "memgraph";
         usedDefaultDbName = true;
 
         try {
@@ -35,7 +35,7 @@ public class ConnectorConfig implements Cloneable {
 
         auth = new AuthConfig();
         auth.setScheme(AuthScheme.basic);
-        auth.setPrincipal("neo4j");
+        auth.setPrincipal("memgraph");
     }
 
     public URI getLocation() {
@@ -80,7 +80,7 @@ public class ConnectorConfig implements Cloneable {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("NeoJ4 DB: ");
+        final StringBuilder sb = new StringBuilder("Memgraph DB: ");
         sb.append(getLocation());
         return sb.toString();
     }

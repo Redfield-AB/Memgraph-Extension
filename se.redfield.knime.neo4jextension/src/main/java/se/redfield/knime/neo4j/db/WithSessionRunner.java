@@ -13,7 +13,7 @@ import se.redfield.knime.neo4j.async.AsyncRunner;
 import se.redfield.knime.neo4j.async.WithSessionAsyncRunnable;
 
 /**
- * @author Vyacheslav Soldatov <vyacheslav.soldatov@inbox.ru>
+ * @author Vyacheslav Soldatov
  *
  * @param <V>
  * @param <R>

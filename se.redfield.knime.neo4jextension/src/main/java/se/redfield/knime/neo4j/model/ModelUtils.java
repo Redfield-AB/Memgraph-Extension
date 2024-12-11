@@ -28,7 +28,7 @@ import se.redfield.knime.neo4j.cell.DataCellValueGetter;
 import se.redfield.knime.neo4j.table.RowInputContainer;
 
 /**
- * @author Vyacheslav Soldatov <vyacheslav.soldatov@inbox.ru>
+ * @author Vyacheslav Soldatov
  *
  */
 public class ModelUtils {

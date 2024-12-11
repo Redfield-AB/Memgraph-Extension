@@ -4,7 +4,7 @@
 package se.redfield.knime.neo4j.connector;
 
 /**
- * @author Vyacheslav Soldatov <vyacheslav.soldatov@inbox.ru>
+ * @author redfield.ai
  *
  */
 public class Named {

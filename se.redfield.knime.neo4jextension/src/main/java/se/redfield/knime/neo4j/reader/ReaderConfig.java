@@ -10,7 +10,7 @@ import se.redfield.knime.neo4j.connector.NamedWithProperties;
 import se.redfield.knime.neo4j.db.LabelsAndFunctions;
 
 /**
- * @author Vyacheslav Soldatov <vyacheslav.soldatov@inbox.ru>
+ * @author redfield.ai
  *
  */
 public class ReaderConfig implements Cloneable {

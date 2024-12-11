@@ -640,7 +640,7 @@ public class ReaderDialog extends NodeDialogPane implements FlowVariablesProvide
         connectorPort = (ConnectorSpec) specs[specs.length - 1];
         //check connector is NULL
         if (connectorPort == null) {
-            throw new NotConfigurableException("Not connected to Neo4j connection");
+            throw new NotConfigurableException("Not connected to Memgraph connection");
         }
 
         try {
