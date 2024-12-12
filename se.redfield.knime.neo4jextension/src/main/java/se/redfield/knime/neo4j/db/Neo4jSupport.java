@@ -147,9 +147,9 @@ public class Neo4jSupport {
         final Driver driver = createDriver();
         try {
             final List<WithSessionRunnable<Void>> runs = new ArrayList<>(3);
-            runs.add(s -> loadNamedWithProperties(s, "call db.labels()", nodes));
+            //runs.add(s -> loadNamedWithProperties(s, nodes)); //call db.labels()
             runs.add(s -> loadNodeLabelPropertiess(s, nodes));
-            runs.add(s -> loadNamedWithProperties(s, "call db.relationshipTypes()", relationships));
+            runs.add(s -> loadNamedWithProperties(s, relationships));
             runs.add(s -> loadRelationshipProperties(s, relationships));
             runs.add(s -> loadFunctions(s, functions));
 
@@ -177,55 +177,41 @@ public class Neo4jSupport {
         return data;
     }
 
-    private Void loadNamedWithProperties(final Session s, final String query,
-            final Map<String, NamedWithProperties> map) {
-        final List<Record> result = s.readTransaction(tx -> tx.run(query).list());
-        for (final Record r : result) {
-            final String type = r.get(0).asString();
-            synchronized (map) {
-                if (!map.containsKey(type)) {
-                    map.put(type, new NamedWithProperties(type));
-                }
-            }
-        }
-        return null;
-    }
-    private Void loadNodeLabelPropertiess(final Session s, final Map<String, NamedWithProperties> map) {
+
+    private Void loadNamedWithProperties(final Session s, final Map<String, NamedWithProperties> map) {
+        // Use DISTINCT to get unique labels
         final List<Record> result = s.readTransaction(tx -> tx.run(
-                "call db.schema.nodeTypeProperties()").list());
+            "MATCH (n) " +
+            "RETURN DISTINCT labels(n) AS labels"
+        ).list());
+        
         for (final Record r : result) {
-            final String property = r.get("propertyName").asString();
-            final List<Object> nodeLabels = r.get("nodeLabels").asList();
-
-            for (final Object obj : nodeLabels) {
-                final String type = (String) obj;
-
-                NamedWithProperties n;
+            List<Object> labels = r.get("labels").asList();
+            for (Object labelObj : labels) {
+                final String type = (String) labelObj;
                 synchronized (map) {
-                    n = map.get(type);
-                    if (n == null) {
-                        n = new NamedWithProperties(type);
-                        map.put(type, n);
+                    if (!map.containsKey(type)) {
+                        map.put(type, new NamedWithProperties(type));
                     }
                 }
-
-                if (property != null && !property.equals("null")) {
-                    n.getProperties().add(property);
-                }
             }
         }
         return null;
     }
 
-    private Void loadRelationshipProperties(final Session s, final Map<String, NamedWithProperties> map) {
+    private Void loadNodeLabelPropertiess(final Session s, final Map<String, NamedWithProperties> map) {
+        // Fetch node properties for each label
         final List<Record> result = s.readTransaction(tx -> tx.run(
-                "call db.schema.relTypeProperties()").list());
+            "MATCH (n) " +
+            "WITH DISTINCT labels(n) AS lbls, keys(n) AS props " +
+            "UNWIND lbls AS label " +
+            "UNWIND props AS prop " +
+            "RETURN DISTINCT label, prop"
+        ).list());
+        
         for (final Record r : result) {
-            final String property = r.get("propertyName").asString();
-            String type = r.get("relType").asString();
-            if (type.startsWith(":")) {
-                type = type.substring(2, type.length() - 1);
-            }
+            final String type = r.get("label").asString();
+            final String property = r.get("prop").asString();
 
             NamedWithProperties n;
             synchronized (map) {
@@ -242,30 +228,43 @@ public class Neo4jSupport {
         }
         return null;
     }
-    private Void loadFunctions(final Session s, final List<FunctionDesc> functions) {
-        final List<Record> dbmsFunctions = s.readTransaction(tx -> tx.run(
-                "SHOW FUNCTIONS YIELD *").list());
 
-        putToFunctions(dbmsFunctions, functions);
+    private Void loadRelationshipProperties(final Session s, final Map<String, NamedWithProperties> map) {
+        // Fetch relationship types and properties
+        final List<Record> result = s.readTransaction(tx -> tx.run(
+            "MATCH ()-[r]-() " +
+            "WITH DISTINCT type(r) AS relType, keys(r) AS props " +
+            "UNWIND props AS prop " +
+            "RETURN DISTINCT relType, prop"
+        ).list());
+        
+        for (final Record r : result) {
+            String type = r.get("relType").asString();
+            final String property = r.get("prop").asString();
 
-        try {
-            final List<Record> dbmsProcedures = s.readTransaction(tx -> tx.run(
-                    "SHOW PROCEDURES YIELD *").list());
+            NamedWithProperties n;
+            synchronized (map) {
+                n = map.get(type);
+                if (n == null) {
+                    n = new NamedWithProperties(type);
+                    map.put(type, n);
+                }
+            }
 
-            putToFunctions(dbmsProcedures, functions);
-        } catch (Exception ignored) {}
-
-        try {
-            final List<Record> gdsList = s.readTransaction(tx -> tx.run(
-                    "call gds.list").list());
-
-            putToFunctions(gdsList, functions);
-        } catch (Exception ignored) {}
-
-        functions.sort(Comparator.comparing(FunctionDesc::getName));
+            if (property != null && !property.equals("null")) {
+                n.getProperties().add(property);
+            }
+        }
         return null;
     }
 
+    private Void loadFunctions(final Session s, final List<FunctionDesc> functions) {
+        return null;
+    }
+    
+    
+
+    
     private void putToFunctions(final List<Record> records, final List<FunctionDesc> functions) {
         for (final Record r : records) {
             final FunctionDesc f = new FunctionDesc();
