@@ -6,17 +6,17 @@
       <node
             category-path="/community/Redfield Memgraph Nodes"
             deprecated="false"
-            factory-class="se.redfield.knime.neo4j.reader.ReaderFactory">
+            factory-class="se.redfield.knime.memgraph.reader.ReaderFactory">
       </node>
       <node
             category-path="/community/Redfield Memgraph Nodes"
             deprecated="false"
-            factory-class="se.redfield.knime.neo4j.connector.ConnectorFactory">
+            factory-class="se.redfield.knime.memgraph.connector.ConnectorFactory">
       </node>
       <node
             category-path="/community/Redfield Memgraph Nodes"
             deprecated="false"
-            factory-class="se.redfield.knime.neo4j.writer.WriterFactory">
+            factory-class="se.redfield.knime.memgraph.writer.WriterFactory">
       </node>
    </extension>
    <extension
@@ -34,11 +34,11 @@
       <portType
             color="red"
             hidden="false"
-            name="se.redfield.knime.neo4jextension.neo4jconnector"
-            objectClass="se.redfield.knime.neo4j.connector.ConnectorPortObject"
-            objectSerializer="se.redfield.knime.neo4j.connector.ConnectorPortObjectSer"
-            specClass="se.redfield.knime.neo4j.connector.ConnectorSpec"
-            specSerializer="se.redfield.knime.neo4j.connector.ConnectorSpecSer">
+            name="se.redfield.knime.memgraph.neo4jconnector"
+            objectClass="se.redfield.knime.memgraph.connector.ConnectorPortObject"
+            objectSerializer="se.redfield.knime.memgraph.connector.ConnectorPortObjectSer"
+            specClass="se.redfield.knime.memgraph.connector.ConnectorSpec"
+            specSerializer="se.redfield.knime.memgraph.connector.ConnectorSpecSer">
       </portType>
    </extension>
 </plugin>

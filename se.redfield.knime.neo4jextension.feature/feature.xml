@@ -6,11 +6,14 @@
       provider-name="Redfield AB">
 
    <description url="http://www.example.com/description">
-      The Neo4j extension provided by Redfield AB (www.redfield.se). The nodes provide users with CRUD capabilities to work with Neo4j database over BOLT protocol. There are nodes for connection to the Neo4j instance, reading data from it and writing back.
+      The Memgraph extension provided by Redfield AB (www.redfield.ai).
+The nodes provide users with CRUD capabilities to work with Memgraph
+database over BOLT protocol. There are nodes for connection to
+the Memgraph instance, reading data from it and writing back.
    </description>
 
    <copyright url="http://www.example.com/copyright">
-      Copyright Redfield AB 2019
+      Copyright Redfield AB 2024
    </copyright>
 
    <license url="https://www.gnu.org/licenses/gpl-3.0-standalone.html">

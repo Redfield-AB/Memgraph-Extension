@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>se.redfield.knime</groupId>
-    <artifactId>neo4j</artifactId>
+    <artifactId>memgraph</artifactId>
     <version>${revision}${changelist}</version>
     <packaging>pom</packaging>
 
@@ -21,11 +21,11 @@
 
     <!-- List the modules of your project here -->
     <modules>
-		<module>se.redfield.knime.neo4jextension/lib/fetch_jars</module>
-        <module>se.redfield.knime.neo4jextension</module>
-        <module>se.redfield.knime.neo4jextension.feature</module>
-        <module>se.redfield.knime.neo4jextension.tests</module>
-        <module>se.redfield.knime.neo4jextension.update</module>
+		<module>se.redfield.knime.memgraph/lib/fetch_jars</module>
+        <module>se.redfield.knime.memgraph</module>
+        <module>se.redfield.knime.memgraph.feature</module>
+        <module>se.redfield.knime.memgraph.tests</module>
+        <module>se.redfield.knime.memgraph.update</module>
     </modules>
 
     <!-- List the update sites providing dependencies for your projects here -->

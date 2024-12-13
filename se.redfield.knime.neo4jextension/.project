@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>se.redfield.knime.neo4jextension</name>
+	<name>se.redfield.knime.memgraph</name>
 	<comment></comment>
 	<projects>
 	</projects>

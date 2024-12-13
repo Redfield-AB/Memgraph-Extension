@@ -23,10 +23,10 @@ import org.knime.core.node.port.flowvariable.FlowVariablePortObject;
 import org.knime.core.node.port.flowvariable.FlowVariablePortObjectSpec;
 import org.osgi.util.tracker.ServiceTracker;
 
-import se.redfield.knime.neo4j.connector.ConnectorPortObject;
-import se.redfield.knime.neo4j.connector.ConnectorPortObjectSer;
-import se.redfield.knime.neo4j.connector.ConnectorSpec;
-import se.redfield.knime.neo4j.connector.ConnectorSpecSer;
+import se.redfield.knime.memgraph.connector.ConnectorPortObject;
+import se.redfield.knime.memgraph.connector.ConnectorPortObjectSer;
+import se.redfield.knime.memgraph.connector.ConnectorSpec;
+import se.redfield.knime.memgraph.connector.ConnectorSpecSer;
 import se.redfield.knime.runner.JunitFrameworkWiring;
 import se.redfield.knime.runner.UnitTestBundle;
 
