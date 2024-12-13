@@ -7,8 +7,11 @@
     <artifactId>memgraph</artifactId>
     <version>${revision}${changelist}</version>
   </parent>
-  <artifactId>se.redfield.knime.memgraph.update.eclipse-repository</artifactId>
-  <version>${revision}${changelist}</version>
-  <packaging>eclipse-repository</packaging>
-  <name>[updatesite] se.redfield.knime.memgraph.update.eclipse-repository</name>
+  <artifactId>se.redfield.knime.neo4jextension.feature</artifactId>
+  <version>1.0.3-SNAPSHOT</version>
+  <packaging>eclipse-feature</packaging>
+  <name>[feature] Neo4j extension</name>
+  <organization>
+    <name>Redfield AB</name>
+  </organization>
 </project>
