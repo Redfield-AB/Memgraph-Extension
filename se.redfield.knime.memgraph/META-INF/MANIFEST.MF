@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Neo4jconnector
+Bundle-Name: Memgraph
 Bundle-SymbolicName: se.redfield.knime.memgraph;singleton:=true
 Bundle-Version: 1.0.3.qualifier
 Bundle-Vendor: REDFIELD
