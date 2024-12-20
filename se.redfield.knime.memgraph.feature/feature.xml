@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="se.redfield.knime.neo4jextension.feature"
-      label="Neo4j extension"
+      id="se.redfield.knime.memgraph.feature"
+      label="Memgraph extension"
       version="1.0.3.qualifier"
       provider-name="Redfield AB">
 
@@ -694,9 +694,10 @@ Public License instead of this License.  But first, please read
    </license>
 
    <plugin
-         id="se.redfield.knime.neo4jextension"
+         id="se.redfield.knime.memgraph"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>

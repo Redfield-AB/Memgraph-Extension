@@ -34,7 +34,7 @@
       <portType
             color="red"
             hidden="false"
-            name="se.redfield.knime.memgraph.neo4jconnector"
+            name="se.redfield.knime.memgraph.memgraphconnector"
             objectClass="se.redfield.knime.memgraph.connector.ConnectorPortObject"
             objectSerializer="se.redfield.knime.memgraph.connector.ConnectorPortObjectSer"
             specClass="se.redfield.knime.memgraph.connector.ConnectorSpec"

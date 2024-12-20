@@ -7,10 +7,10 @@
     <artifactId>memgraph</artifactId>
     <version>${revision}${changelist}</version>
   </parent>
-  <artifactId>se.redfield.knime.neo4jextension.feature</artifactId>
+  <artifactId>se.redfield.knime.memgraph.feature</artifactId>
   <version>1.0.3-SNAPSHOT</version>
   <packaging>eclipse-feature</packaging>
-  <name>[feature] Neo4j extension</name>
+  <name>[feature] Memgraph extension</name>
   <organization>
     <name>Redfield AB</name>
   </organization>
