@@ -3,10 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>se.redfield.knime</groupId>
-        <artifactId>neo4j</artifactId>
+        <artifactId>memgraph</artifactId>
         <version>${revision}${changelist}</version>
     </parent>
-    <artifactId>se.redfield.knime.neo4jextension.tests</artifactId>
+    <artifactId>se.redfield.knime.memgraph.tests</artifactId>
     <version>${revision}${changelist}</version>
     <packaging>eclipse-test-plugin</packaging>
 
@@ -40,7 +40,7 @@
                             </requirement>
                             <requirement>
                                 <type>eclipse-feature</type>
-                                <id>se.redfield.knime.neo4jextension.feature</id>
+                                <id>se.redfield.knime.memgraph.feature</id>
                                 <versionRange>${revision}</versionRange>
                             </requirement>
                         </extraRequirements>

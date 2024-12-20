@@ -10,7 +10,7 @@
   <artifactId>se.redfield.knime.memgraph</artifactId>
   <version>1.0.3-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
-  <name>[bundle] Neo4jconnector</name>
+  <name>[bundle] Memgraph</name>
   <organization>
     <name>REDFIELD</name>
   </organization>
