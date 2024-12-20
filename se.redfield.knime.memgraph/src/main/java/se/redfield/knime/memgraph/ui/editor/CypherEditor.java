@@ -34,7 +34,7 @@ public class CypherEditor {
 	private static final String CYPHER_SYNTAX = "text/cypher";
 	static {
 		AbstractTokenMakerFactory atmf = (AbstractTokenMakerFactory) TokenMakerFactory.getDefaultInstance();
-		atmf.putMapping(CYPHER_SYNTAX, "se.redfield.knime.neo4j.ui.editor.CypherTokenMaker",
+		atmf.putMapping(CYPHER_SYNTAX, "se.redfield.knime.memgraph.ui.editor.CypherTokenMaker",
 				CypherEditor.class.getClassLoader());
 	}
 
