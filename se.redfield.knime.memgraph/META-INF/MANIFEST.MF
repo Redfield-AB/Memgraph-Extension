@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.ui,
  org.knime.rsyntaxtextarea;bundle-version="[5.1.0,6.0.0)",
  com.fifesoft.autocomplete;bundle-version="[2.6.0,3.0.0)",
  com.fifesoft.rsyntaxtextarea;bundle-version="[2.6.0,3.0.0)"
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Automatic-Module-Name: com.redfield.ab.knime.memgraph
 Bundle-ClassPath: .,
  lib/neo4j-java-driver-5.14.0.jar
